@@ -5,12 +5,13 @@ Created on Mon Oct  2 16:44:49 2023
 
 @author: miramota
 """
-
+#importing all the packages needed
 import os
 import pandas as pd
 import random
 
-
+#creating a function that will be used to rename the files 
+#output is a,b,c, and then go to aa,ab,ac etc
 def generate_alphabet():
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     while True:
@@ -20,6 +21,10 @@ def generate_alphabet():
             for letter in alphabet:
                 yield prefix + letter
 
+#creating a function that will grab all the files in a given directory and put them into a list
+# it will then copy the list and shuffle them, then iterate through the shuffled list and use the generate alphabet to rename the files
+# using the zip function both the shuffled and the renamed list will be paired together as a key for unblinding
+# the lists will then be copied into a newly generated excel list based on the current directory input
 
 def rename_files(directory_path):
     file_list = []
@@ -53,6 +58,7 @@ def rename_files(directory_path):
     print('The files are blinded and excel is created')
     return df
 
-
+#give the directory folder to iterate through the files needing blinding
 directory_path = ''
+#apply the function to shuffle, rename, and create the excel sheet with the key
 rename_files(directory_path)
