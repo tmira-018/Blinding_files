@@ -54,5 +54,5 @@ def rename_files(directory_path):
     return df
 
 
-directory_path = '/Users/miramota/Desktop/062423_mbpnls/'
+directory_path = ''
 rename_files(directory_path)
