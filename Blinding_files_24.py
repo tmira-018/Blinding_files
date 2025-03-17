@@ -10,6 +10,7 @@ import os
 import pandas as pd
 import random
 import argparse
+import openpyxl
 
 #creating a function that will be used to rename the files 
 #output is a,b,c, and then go to aa,ab,ac etc
@@ -62,7 +63,7 @@ def rename_files(directory_path, excel_filename):
 
 def main():
     parser = argparse.ArgumentParser(description = 'Rename files in a directory and create an Excel file with the original and blinded filenames as a reference')
-    parser.add_argument('directory_path', type = str, help= 'The path to the directory folder containing the files to blind')
+    parser.add_argument('directory_path', type = str, help= 'The full path to the directory folder containing the files to blind')
     parser.add_argument('--excel', type = str, default = 'blinded_reference.xlsx', help = 'The name of the output excel file (default: blinded_reference.xlsx)')
     args = parser.parse_args()
 
